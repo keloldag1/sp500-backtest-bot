@@ -13,12 +13,14 @@ def download_data(symbol, period='3mo', interval='1d'):
         if df.empty:
             return None
 
-        # Flatten multi-index columns if they exist
+        # Flatten multi-level columns, if any
         if isinstance(df.columns, pd.MultiIndex):
-            df.columns = df.columns.get_level_values(1)
+            df.columns = df.columns.get_level_values(0)
 
-        return df.dropna()
+        df = df.dropna()
+        return df
     except Exception as e:
         print(f"Error fetching data for {symbol}: {e}")
         return None
+
 
