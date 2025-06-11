@@ -8,7 +8,7 @@ def backtest_signals(df):
 
     for i in range(1, len(df)):
         if df['buy_signal'].iloc[i] and not position:
-            entry_price = df['Close'].iloc[i]
+            entry_price = df['close'].iloc[i]
             position = True
         elif df['sell_signal'].iloc[i] and position:
             exit_price = df['close'].iloc[i]
