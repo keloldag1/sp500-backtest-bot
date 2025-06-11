@@ -1,9 +1,7 @@
 from data import get_sp500_symbols, download_data
 from indicators import calculate_indicators
 from strategy import generate_signals
-from backtest import backtest_signals, analyze_results
-
-
+from backtest import backtest_signals, analyze_results, display_top_results  # ✅ include this!
 
 def run_backtest():
     symbols = get_sp500_symbols()
@@ -21,10 +19,7 @@ def run_backtest():
             result = analyze_results(symbol, trades)
             results.append(result)
 
-    from backtest import backtest_signals, analyze_results, display_top_results
-...
-display_top_results(results)
-
+    display_top_results(results)  # ✅ move this INSIDE the function
 
 if __name__ == '__main__':
     run_backtest()
