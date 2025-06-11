@@ -1,5 +1,8 @@
 import pandas as pd
 import yfinance as yf
+import sys
+import os
+
 
 def get_sp500_symbols():
     url = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
