@@ -1,7 +1,9 @@
 from data import get_sp500_symbols, download_data
 from indicators import calculate_indicators
 from strategy import generate_signals
-from backtest import backtest_signals, analyze_results
+from backtest import backtest_signals
+import analyze_results 
+
 
 def run_backtest():
     symbols = get_sp500_symbols()
