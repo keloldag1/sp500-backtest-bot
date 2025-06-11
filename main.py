@@ -1,5 +1,10 @@
 import pandas as pd
 import json
+from data import get_sp500_symbols, download_data
+from indicators import calculate_indicators
+from strategy import generate_signals
+from backtest import backtest_signals, analyze_results, display_top_results
+
 
 def run_backtest():
     symbols = get_sp500_symbols()
