@@ -1,7 +1,7 @@
 from data import get_sp500_symbols, download_data
 from indicators import calculate_indicators
 from strategy import generate_signals
-from backtest import backtest_signals, analyze results
+from backtest import backtest_signals, analyze_results
 
 
 
