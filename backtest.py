@@ -11,12 +11,12 @@ def backtest_signals(df):
             entry_price = df['Close'].iloc[i]
             position = True
         elif df['sell_signal'].iloc[i] and position:
-            exit_price = df['Close'].iloc[i]
+            exit_price = df['close'].iloc[i]
             returns.append((exit_price - entry_price) / entry_price)
             position = False
 
     if position:
-        returns.append((df['Close'].iloc[-1] - entry_price) / entry_price)
+        returns.append((df['close'].iloc[-1] - entry_price) / entry_price)
 
     return pd.Series(returns)
 
